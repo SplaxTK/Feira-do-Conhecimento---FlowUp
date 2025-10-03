@@ -9,53 +9,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
  
   <style>
-/* Garantir que o texto das tarefas completadas seja preto no modo claro */
-.task-completed-text {
-    color: #000000 !important;
-    font-weight: 600;
-}
+    /* Garantir que o texto das tarefas completadas seja preto no modo claro */
+    .task-completed-text {
+        color: #000000 !important;
+        font-weight: 600;
+    }
 
-/* No modo escuro, manter o texto branco */
-.dark .task-completed-text {
-    color: #ffffff !important;
-}
+    /* No modo escuro, manter o texto branco */
+    .dark .task-completed-text {
+        color: #ffffff !important;
+    }
 
-/* Estilo para tarefas completadas no modo claro */
-.task-completed-light {
-    background: linear-gradient(to right, #d1fae5, #a7f3d0) !important;
-}
+    /* Estilo para tarefas completadas no modo claro */
+    .task-completed-light {
+        background: linear-gradient(to right, #d1fae5, #a7f3d0) !important;
+    }
 
-.task-completed-light span {
-    color: #000000 !important;
-    font-weight: 600;
-}
+    .task-completed-light span {
+        color: #000000 !important;
+        font-weight: 600;
+    }
 
-/* Estilo para tarefas completadas no modo escuro */
-.task-completed-dark {
-    background: linear-gradient(to right, #052e16, #166534) !important;
-}
+    /* Estilo para tarefas completadas no modo escuro */
+    .task-completed-dark {
+        background: linear-gradient(to right, #052e16, #166534) !important;
+    }
 
-.task-completed-dark span {
-    color: #ffffff !important;
-    font-weight: 600;
-}
-/* CORREÇÃO: Garantir que o texto das tarefas seja preto no modo claro */
-.task-card span {
-    color: #000000 !important;
-}
+    .task-completed-dark span {
+        color: #ffffff !important;
+        font-weight: 600;
+    }
+    
+    /* CORREÇÃO: Garantir que o texto das tarefas seja preto no modo claro */
+    .task-card span {
+        color: #000000 !important;
+    }
 
-.dark .task-card span {
-    color: #ffffff !important;
-}
+    .dark .task-card span {
+        color: #ffffff !important;
+    }
 
-/* CORREÇÃO: Texto dos cabeçalhos das seções */
-.task-card h2 {
-    color: #000000 !important;
-}
+    /* CORREÇÃO: Texto dos cabeçalhos das seções */
+    .task-card h2 {
+        color: #000000 !important;
+    }
 
-.dark .task-card h2 {
-    color: #ffffff !important;
-}
+    .dark .task-card h2 {
+        color: #ffffff !important;
+    }
+    
     body {
       font-family: 'Poppins', sans-serif;
       transition: background-color 0.3s, color 0.3s;
@@ -350,9 +352,9 @@
       color: #e2e8f0;
     }
     
-    /* MELHORIAS ADICIONADAS */
+   
     
-    /* Responsividade aprimorada */
+    /* Responsividade  */
     @media (max-width: 1024px) {
       main {
         grid-template-columns: 1fr;
@@ -493,6 +495,186 @@
     .pizza-pepperoni:nth-child(3) { bottom: 15px; left: 15px; }
     .pizza-pepperoni:nth-child(4) { bottom: 15px; right: 15px; }
     .pizza-pepperoni:nth-child(5) { top: 30px; left: 30px; }
+    
+    /* ========== MELHORIAS DE RESPONSIVIDADE ========== */
+    
+    /* Ajustes gerais para telas menores */
+    @media (max-width: 1024px) {
+      main {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .reward-card {
+        margin-bottom: 1rem;
+      }
+    }
+    
+    /* Tablet (768px - 1024px) */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      main {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .task-card:last-child {
+        grid-column: 1 / -1;
+      }
+      
+      .grid-cols-1.sm\\:grid-cols-2.md\\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* Mobile (até 768px) */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      .points-display {
+        order: -1;
+        margin-bottom: 0.5rem;
+      }
+      
+      .notification-dropdown {
+        width: 280px;
+        right: -50px;
+      }
+      
+      .task-card li {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+      
+      .task-card li button {
+        width: 100%;
+      }
+      
+      /* Ajustes para seção de recompensas em mobile */
+      .bg-gradient-to-r.from-indigo-50.to-purple-50 {
+        padding: 1rem 0.75rem;
+      }
+      
+      /* Ajustes de fonte para mobile */
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      h2 {
+        font-size: 1.25rem;
+      }
+      
+      .text-base {
+        font-size: 0.9rem;
+      }
+      
+      .text-lg {
+        font-size: 1rem;
+      }
+      
+      /* Ajustes de espaçamento para mobile */
+      .p-4 {
+        padding: 1rem;
+      }
+      
+      .p-5 {
+        padding: 1.25rem;
+      }
+      
+      .p-6 {
+        padding: 1.5rem;
+      }
+      
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+      
+      .mb-6 {
+        margin-bottom: 1.5rem;
+      }
+    
+      .desktop-nav {
+        display: none;
+      }
+    }
+    
+    /* Mobile pequeno (até 480px) */
+    @media (max-width: 480px) {
+      .notification-dropdown {
+        width: 250px;
+        right: -80px;
+      }
+      
+      .modal-content, .custom-reward-content, .edit-task-content {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+      
+      .grid-cols-1.sm\\:grid-cols-2.md\\:grid-cols-4 {
+        grid-template-columns: 1fr;
+      }
+      
+      /* Ajustes de botões para mobile pequeno */
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .points-display {
+        font-size: 0.9rem;
+        padding: 4px 12px;
+      }
+      
+      /* Ajustes de ícones para mobile pequeno */
+      .text-2xl {
+        font-size: 1.5rem;
+      }
+      
+      .text-xl {
+        font-size: 1.25rem;
+      }
+      
+      /* Ajustes de logo para mobile pequeno */
+      .pizza-logo {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .pizza-logo::before {
+        width: 35px;
+        height: 35px;
+      }
+      
+      .pizza-logo::after {
+        width: 25px;
+        height: 25px;
+      }
+      
+      .pizza-slice {
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 40px solid #fbbf24;
+      }
+    }
+    
+    /* Ajustes para orientação paisagem em mobile */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .modal-content, .custom-reward-content, .edit-task-content {
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      
+      header {
+        padding: 0.5rem;
+      }
+      
+      main {
+        padding: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-blue-50 text-gray-800 min-h-screen flex flex-col">
@@ -505,8 +687,8 @@
         </div>
         <h1 class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">FlowUp</h1>
       </div>
-      <nav class="hidden md:flex space-x-4">
-        <a href="index.html" class="hover:text-indigo-600 font-medium transition-colors duration-200">Início</a>
+      <nav class="desktop-nav hidden md:flex space-x-4">
+        <a href="#" class="hover:text-indigo-600 font-medium transition-colors duration-200">Início</a>
         <a href="calendario.html" class="hover:text-indigo-600 font-medium transition-colors duration-200">Calendário</a>
       </nav>
     </div>
@@ -543,9 +725,31 @@
         </div>
       </div>
       
-      <!-- Botão de Login/Logout -->
+
       <button id="loginBtn" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-lg font-medium hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 shadow-md">Login</button>
     </div>
+    
+    <!-- Navegação Mobile -->
+    <nav class="mobile-nav md:hidden w-full mt-2">
+      <div class="flex justify-around">
+        <a href="index.html" class="flex flex-col items-center text-indigo-600">
+          <i class='bx bx-home text-xl'></i>
+          <span class="text-xs mt-1">Início</span>
+        </a>
+        <a href="calendario.html" class="flex flex-col items-center text-gray-600">
+          <i class='bx bx-calendar text-xl'></i>
+          <span class="text-xs mt-1">Calendário</span>
+        </a>
+        <button class="flex flex-col items-center text-gray-600" onclick="openCustomRewardModal()">
+          <i class='bx bx-gift text-xl'></i>
+          <span class="text-xs mt-1">Recompensas</span>
+        </button>
+        <button class="flex flex-col items-center text-gray-600" id="mobileThemeToggle">
+          <i class='bx bx-moon text-xl' id="mobileThemeIcon"></i>
+          <span class="text-xs mt-1">Tema</span>
+        </button>
+      </div>
+    </nav>
   </header>
 
   <!-- Conteúdo principal -->
@@ -767,57 +971,77 @@
   </div>
 
   <script>
-
     // Função para completar tarefas
-function completeTask(button, reward) {
-    points += reward;
-    document.getElementById("points").innerText = points;
-    
-    // Salvar automaticamente
-    savePoints(points);
-    saveCompletedTasks();
+    function completeTask(button, reward) {
+        points += reward;
+        document.getElementById("points").innerText = points;
+        
+        // Salvar automaticamente
+        savePoints(points);
+        saveCompletedTasks();
 
-    button.disabled = true;
-    button.innerText = "Concluído";
-    button.classList.remove("bg-gradient-to-r", "from-green-400", "to-green-500", "hover:from-green-500", "hover:to-green-600");
-    button.classList.add("bg-gray-400");
+        button.disabled = true;
+        button.innerText = "Concluído";
+        button.classList.remove("bg-gradient-to-r", "from-green-400", "to-green-500", "hover:from-green-500", "hover:to-green-600");
+        button.classList.add("bg-gray-400");
 
-    // Aplicar estilo baseado no modo atual
-    const taskItem = button.parentElement;
-    const taskText = taskItem.querySelector('span');
-    
-    // Adicionar classe para o texto
-    taskText.classList.add('task-completed-text');
-    
-    // Aplicar fundo baseado no modo
-    if (isDarkMode) {
-        taskItem.classList.add('task-completed-dark');
-        taskItem.classList.remove('task-completed-light');
-    } else {
-        taskItem.classList.add('task-completed-light');
-        taskItem.classList.remove('task-completed-dark');
+        // Aplicar estilo baseado no modo atual
+        const taskItem = button.parentElement;
+        const taskText = taskItem.querySelector('span');
+        
+        // Adicionar classe para o texto
+        taskText.classList.add('task-completed-text');
+        
+        // Aplicar fundo baseado no modo
+        if (isDarkMode) {
+            taskItem.classList.add('task-completed-dark');
+            taskItem.classList.remove('task-completed-light');
+        } else {
+            taskItem.classList.add('task-completed-light');
+            taskItem.classList.remove('task-completed-dark');
+        }
+        
+        addNotification(`Você ganhou ${reward} pontos por completar uma tarefa!`);
     }
-    
-    addNotification(`Você ganhou ${reward} pontos por completar uma tarefa!`);
-}
-// Carregar tarefas completadas
-function loadCompletedTasks() {
-    const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
-    document.querySelectorAll('li').forEach(li => {
-        const taskText = li.querySelector('span').textContent;
-        if (completedTasks.includes(taskText)) {
+
+    // Carregar tarefas completadas
+    function loadCompletedTasks() {
+        const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
+        document.querySelectorAll('li').forEach(li => {
+            const taskText = li.querySelector('span').textContent;
+            if (completedTasks.includes(taskText)) {
+                const button = li.querySelector('button');
+                if (button) {
+                    button.disabled = true;
+                    button.innerText = "Concluído";
+                    button.classList.remove("bg-gradient-to-r", "from-green-400", "to-green-500", "hover:from-green-500", "hover:to-green-600");
+                    button.classList.add("bg-gray-400");
+                    
+                    // Adicionar classe para o texto
+                    const textSpan = li.querySelector('span');
+                    textSpan.classList.add('task-completed-text');
+                    
+                    // Aplicar estilo baseado no modo atual
+                    if (isDarkMode) {
+                        li.classList.add('task-completed-dark');
+                        li.classList.remove('task-completed-light');
+                    } else {
+                        li.classList.add('task-completed-light');
+                        li.classList.remove('task-completed-dark');
+                    }
+                }
+            }
+        });
+    }
+
+    // Atualizar cores das tarefas completadas quando o tema mudar
+    function updateCompletedTasksColors() {
+        document.querySelectorAll('li').forEach(li => {
             const button = li.querySelector('button');
-            if (button) {
-                button.disabled = true;
-                button.innerText = "Concluído";
-                button.classList.remove("bg-gradient-to-r", "from-green-400", "to-green-500", "hover:from-green-500", "hover:to-green-600");
-                button.classList.add("bg-gray-400");
-                
-                // Adicionar classe para o texto
+            if (button && button.disabled && button.innerText === "Concluído") {
                 const textSpan = li.querySelector('span');
                 textSpan.classList.add('task-completed-text');
                 
-                // Aplicar estilo baseado no modo atual
                 if (isDarkMode) {
                     li.classList.add('task-completed-dark');
                     li.classList.remove('task-completed-light');
@@ -826,27 +1050,9 @@ function loadCompletedTasks() {
                     li.classList.remove('task-completed-dark');
                 }
             }
-        }
-    });
-}
-// Atualizar cores das tarefas completadas quando o tema mudar
-function updateCompletedTasksColors() {
-    document.querySelectorAll('li').forEach(li => {
-        const button = li.querySelector('button');
-        if (button && button.disabled && button.innerText === "Concluído") {
-            const textSpan = li.querySelector('span');
-            textSpan.classList.add('task-completed-text');
-            
-            if (isDarkMode) {
-                li.classList.add('task-completed-dark');
-                li.classList.remove('task-completed-light');
-            } else {
-                li.classList.add('task-completed-light');
-                li.classList.remove('task-completed-dark');
-            }
-        }
-    });
-}
+        });
+    }
+
     // Sistema de salvamento automático
     function savePoints(points) {
         localStorage.setItem('FlowPoints', points.toString());
@@ -951,54 +1157,6 @@ function updateCompletedTasksColors() {
         localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
     }
 
-    // Carregar tarefas completadas
-    function loadCompletedTasks() {
-        const completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
-        document.querySelectorAll('li').forEach(li => {
-            const taskText = li.querySelector('span').textContent;
-            if (completedTasks.includes(taskText)) {
-                const button = li.querySelector('button');
-                if (button) {
-                    button.disabled = true;
-                    button.innerText = "Concluído";
-                    button.classList.remove("bg-gradient-to-r", "from-green-400", "to-green-500", "hover:from-green-500", "hover:to-green-600");
-                    button.classList.add("bg-gray-400");
-                    
-                    // Aplicar estilo baseado no modo atual (CORREÇÃO)
-                    if (isDarkMode) {
-                        li.style.background = "linear-gradient(to right, #052e16, #166534)";
-                    } else {
-                        li.style.background = "linear-gradient(to right, #d1fae5, #a7f3d0)";
-                    }
-                }
-            }
-        });
-    }
-
-    // Função para completar tarefas
-    function completeTask(button, reward) {
-        points += reward;
-        document.getElementById("points").innerText = points;
-        
-        // Salvar automaticamente
-        savePoints(points);
-        saveCompletedTasks();
-    
-        
-        button.disabled = true;
-        button.innerText = "Concluído";
-        button.classList.remove("bg-gradient-to-r", "from-green-400", "to-green-500", "hover:from-green-500", "hover:to-green-600");
-        button.classList.add("bg-gray-400");
-
-        // Aplicar estilo baseado no modo atual (CORREÇÃO)
-        if (isDarkMode) {
-            button.parentElement.style.background = "linear-gradient(to right, #052e16, #166534)";
-        } else {
-            button.parentElement.style.background = "linear-gradient(to right, #d1fae5, #a7f3d0)";
-        }
-        addNotification(`Você ganhou ${reward} pontos por completar uma tarefa!`);
-    }
-
     // Função para resgatar recompensas
     function redeemReward(cost) {
         if (points >= cost) {
@@ -1037,6 +1195,8 @@ function updateCompletedTasksColors() {
     const clearAllNotifications = document.getElementById('clearAllNotifications');
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+    const mobileThemeIcon = document.getElementById('mobileThemeIcon');
     
     // Novos elementos para funcionalidades adicionadas
     const customRewardModal = document.getElementById('customRewardModal');
@@ -1071,6 +1231,10 @@ function updateCompletedTasksColors() {
       document.body.classList.add('dark');
       themeIcon.classList.remove('bx-moon');
       themeIcon.classList.add('bx-sun');
+      if (mobileThemeIcon) {
+        mobileThemeIcon.classList.remove('bx-moon');
+        mobileThemeIcon.classList.add('bx-sun');
+      }
       isDarkMode = true;
       localStorage.setItem('theme', 'dark');
       // Atualizar cores das tarefas completadas
@@ -1082,80 +1246,48 @@ function updateCompletedTasksColors() {
       document.body.classList.remove('dark');
       themeIcon.classList.remove('bx-sun');
       themeIcon.classList.add('bx-moon');
+      if (mobileThemeIcon) {
+        mobileThemeIcon.classList.remove('bx-sun');
+        mobileThemeIcon.classList.add('bx-moon');
+      }
       isDarkMode = false;
       localStorage.setItem('theme', 'light');
       // Atualizar cores das tarefas completadas
       updateCompletedTasksColors();
     }
-document.addEventListener('DOMContentLoaded', () => {
-    initNotifications();
-    loadThemePreference();
-    
-    // Carregar pontos e tarefas salvas
-    points = loadPoints();
-    document.getElementById("points").innerText = points;
-    loadCustomTasks(); // Carregar tarefas personalizadas
-    loadCompletedTasks(); // Carregar tarefas completadas
-    forceTextColors(); // ← ADICIONE ESTA LINHA PARA GARANTIR
-});
- // Alternar entre modo claro e escuro
-function toggleTheme() {
-    if (isDarkMode) {
-        disableDarkMode();
-    } else {
-        enableDarkMode();
+
+    // Alternar entre modo claro e escuro
+    function toggleTheme() {
+        if (isDarkMode) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+        forceTextColors();
+        updateCompletedTasksColors();
     }
-    forceTextColors(); // ← ADICIONE ESTA LINHA
-    updateCompletedTasksColors();
-}
-   // Atualizar cores das tarefas completadas quando o tema mudar
-function updateCompletedTasksColors() {
-    document.querySelectorAll('li').forEach(li => {
-        const button = li.querySelector('button');
-        if (button && button.disabled && button.innerText === "Concluído") {
-            const textSpan = li.querySelector('span');
-            textSpan.classList.add('task-completed-text');
-            
-            if (isDarkMode) {
-                li.classList.add('task-completed-dark');
-                li.classList.remove('task-completed-light');
-                textSpan.style.color = "#ffffff !important";
+
+    // Forçar cores corretas no carregamento da página
+    function forceTextColors() {
+        const isDark = document.body.classList.contains('dark');
+        
+        document.querySelectorAll('.task-card span').forEach(span => {
+            if (isDark) {
+                span.style.color = "#ffffff";
             } else {
-                li.classList.add('task-completed-light');
-                li.classList.remove('task-completed-dark');
-                textSpan.style.color = "#000000 !important";
+                span.style.color = "#000000";
             }
-        } else {
-            // Para tarefas não completadas
-            const textSpan = li.querySelector('span');
-            if (isDarkMode) {
-                textSpan.style.color = "#ffffff !important";
+        });
+        
+        document.querySelectorAll('.task-card h2').forEach(h2 => {
+            if (isDark) {
+                h2.style.color = "#ffffff";
             } else {
-                textSpan.style.color = "#000000 !important";
+                h2.style.color = "#000000";
             }
-        }
-    });
-}
-// Forçar cores corretas no carregamento da página
-function forceTextColors() {
-    const isDark = document.body.classList.contains('dark');
-    
-    document.querySelectorAll('.task-card span').forEach(span => {
-        if (isDark) {
-            span.style.color = "#ffffff";
-        } else {
-            span.style.color = "#000000";
-        }
-    });
-    
-    document.querySelectorAll('.task-card h2').forEach(h2 => {
-        if (isDark) {
-            h2.style.color = "#ffffff";
-        } else {
-            h2.style.color = "#000000";
-        }
-    });
-}
+        });
+    }
+
     // Inicializar notificações
     function initNotifications() {
       updateNotificationCount();
@@ -1377,7 +1509,7 @@ function forceTextColors() {
       });
     }
 
-    // CORREÇÃO: Função salvar tarefas corrigida
+    // Função salvar tarefas
     function saveTasksFunc() {
       const taskType = editTaskModal.dataset.taskType;
       const taskList = document.getElementById(`${taskType}Tasks`);
@@ -1456,6 +1588,31 @@ function forceTextColors() {
       
       // Adicionar notificação
       addNotification(`Recompensa personalizada "${name}" criada por ${cost} pontos!`);
+      
+      // Salvar recompensas personalizadas
+      saveCustomRewards();
+    }
+
+    // Salvar recompensas personalizadas
+    function saveCustomRewards() {
+        const customRewards = [];
+        document.querySelectorAll('#rewardsContainer .bg-white').forEach(rewardCard => {
+            const name = rewardCard.querySelector('span.text-base').textContent;
+            const cost = parseInt(rewardCard.querySelector('span.text-xs').textContent.replace(' pontos', ''));
+            customRewards.push({ name, cost });
+        });
+        localStorage.setItem('customRewards', JSON.stringify(customRewards));
+    }
+
+    // Carregar recompensas personalizadas
+    function loadCustomRewards() {
+        const savedRewards = localStorage.getItem('customRewards');
+        if (savedRewards) {
+            const customRewards = JSON.parse(savedRewards);
+            customRewards.forEach(reward => {
+                createCustomReward(reward.name, reward.cost, '');
+            });
+        }
     }
 
     // Event Listeners
@@ -1499,6 +1656,11 @@ function forceTextColors() {
     });
 
     themeToggle.addEventListener('click', toggleTheme);
+    
+    // Event listener para o botão de tema mobile
+    if (mobileThemeToggle) {
+      mobileThemeToggle.addEventListener('click', toggleTheme);
+    }
 
     // Fechar dropdown ao clicar fora
     document.addEventListener('click', (e) => {
@@ -1549,29 +1711,8 @@ function forceTextColors() {
       document.getElementById("points").innerText = points;
       loadCustomTasks(); // Carregar tarefas personalizadas
       loadCompletedTasks(); // Carregar tarefas completadas
+      forceTextColors(); // Forçar cores corretas
     });
-
-    // Salvar recompensas personalizadas
-function saveCustomRewards() {
-    const customRewards = [];
-    document.querySelectorAll('#rewardsContainer .bg-white').forEach(rewardCard => {
-        const name = rewardCard.querySelector('span.text-base').textContent;
-        const cost = parseInt(rewardCard.querySelector('span.text-xs').textContent.replace(' pontos', ''));
-        customRewards.push({ name, cost });
-    });
-    localStorage.setItem('customRewards', JSON.stringify(customRewards));
-}
-
-// Carregar recompensas personalizadas
-function loadCustomRewards() {
-    const savedRewards = localStorage.getItem('customRewards');
-    if (savedRewards) {
-        const customRewards = JSON.parse(savedRewards);
-        customRewards.forEach(reward => {
-            createCustomReward(reward.name, reward.cost, '');
-        });
-    }
-}
-</script>
+  </script>
 </body>
 </html>
